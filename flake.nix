@@ -8,9 +8,35 @@
     };
   };
 
-  outputs = { self, core, javascript }: {
-    inherit core;
+  outputs =
+    {
+      self,
+      core,
+      javascript,
+    }:
+    let
+      forAllSystems =
+        function:
+        core.lib.genAttrs core.lib.systems.flakeExposed (
+          system:
+          function {
+            nixPackages = core.nixPackages.${system};
+            auxPackages = core.auxPackages.${system};
+          }
+        );
+    in
+    {
+      inherit (core) lib;
 
-    javascript = javascript.topLevelOut { inherit core; };
-  };
+      auxPackages = forAllSystems (
+        { auxPackages, nixPackages, ... }:
+        let
+          inherit (nixPackages.stdenv.hostPlatform) system;
+        in
+        {
+          core = auxPackages;
+          javascript = javascript.packages.${system};
+        }
+      );
+    };
 }
