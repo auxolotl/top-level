@@ -18,6 +18,24 @@
         "type": "github"
       }
     },
+    "javascript": {
+      "inputs": {
+        "top-level": []
+      },
+      "locked": {
+        "lastModified": 1714721665,
+        "narHash": "sha256-mKYBnQ7XKe5cabtVB4gkhhS0LCjRt+TO38szsedukJE=",
+        "owner": "auxolotl",
+        "repo": "javascript",
+        "rev": "36ef70c8a6b958878077e785a6da57246dd03330",
+        "type": "github"
+      },
+      "original": {
+        "owner": "auxolotl",
+        "repo": "javascript",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1714253743,
@@ -36,7 +54,8 @@
     },
     "root": {
       "inputs": {
-        "core": "core"
+        "core": "core",
+        "javascript": "javascript"
       }
     }
   },
