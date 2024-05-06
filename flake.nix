@@ -1,10 +1,10 @@
 {
   inputs = {
-    core.url = "github:auxolotl/packages";
+    core.url = "github:auxolotl/core";
 
     javascript = {
       url = "github:auxolotl/javascript";
-      inputs.top-level.follows = "";
+      inputs.core.follows = "core";
     };
   };
 
@@ -26,15 +26,16 @@
         );
     in
     {
-      inherit (core) lib;
+      inherit (core) lib nixPackages;
 
       auxPackages = forAllSystems (
-        { auxPackages, nixPackages, ... }:
+        { nixPackages, ... }:
         let
           inherit (nixPackages.stdenv.hostPlatform) system;
         in
         {
-          core = auxPackages;
+          # TODO: uncomment when core exposes auxPackages
+          # core = auxPackages;
           javascript = javascript.packages.${system};
         }
       );

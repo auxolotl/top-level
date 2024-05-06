@@ -5,29 +5,31 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1714602819,
-        "narHash": "sha256-U/emV+rC0ssCNvOdlKRt4K9AUzrQcGW3PzvD6E/NNKg=",
+        "lastModified": 1714776728,
+        "narHash": "sha256-Hs7WOGPk4Kolg4pPTihPGGPOAfCl6+As67pDJkOb/DM=",
         "owner": "auxolotl",
-        "repo": "packages",
-        "rev": "48b022083ffb6e2f1dbfec08411a08f63149b8a0",
+        "repo": "core",
+        "rev": "cbe7a41cc89ccda6bfd14da7c2a8cf982ca07d24",
         "type": "github"
       },
       "original": {
         "owner": "auxolotl",
-        "repo": "packages",
+        "repo": "core",
         "type": "github"
       }
     },
     "javascript": {
       "inputs": {
-        "top-level": []
+        "core": [
+          "core"
+        ]
       },
       "locked": {
-        "lastModified": 1714721665,
-        "narHash": "sha256-mKYBnQ7XKe5cabtVB4gkhhS0LCjRt+TO38szsedukJE=",
+        "lastModified": 1714958271,
+        "narHash": "sha256-uqd06kP5le/phhPeTKrLN61i6WAgi1qyIByiVTbSZB4=",
         "owner": "auxolotl",
         "repo": "javascript",
-        "rev": "36ef70c8a6b958878077e785a6da57246dd03330",
+        "rev": "bcba61388e79647b63f4ad6086b14ab1ccb4a517",
         "type": "github"
       },
       "original": {
